@@ -6,13 +6,8 @@ namespace adventofcode2024app
     {
         static void Main(string[] args)
         {
-            string output;
-
-            Day1.Part1("day1/day1.txt");
-            output = Day1.Part2("day1/day1.txt");
-
-
-            Console.WriteLine(output);
+            Console.WriteLine("Day 1, Part 1:\t" + Day1.Part1("day1/day1.txt"));
+            Console.WriteLine("Day 1, Part 2:\t" + Day1.Part2("day1/day1.txt"));
         }
     }
 }

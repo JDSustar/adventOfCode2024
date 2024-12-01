@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -9,47 +10,51 @@ namespace adventofcode2024app
         static public string Part1(string filename)
         {
             var lines = File.ReadAllLines(filename);
-            int sumOfCalibrationValues = 0;
+            List<int> left = new List<int>();
+            List<int> right = new List<int>();
 
             foreach (var line in lines)
             {
-                var first = (line.First(c => Char.IsDigit(c)));
-                var last = (line.Last(c => Char.IsDigit(c)));
-                var number = first.ToString() + last.ToString();
-                int calibrationValue = Convert.ToInt32(number);
-                sumOfCalibrationValues += calibrationValue;
+                var parts = line.Split("   ");
+                left.Add(Convert.ToInt32(parts[0]));
+                right.Add(Convert.ToInt32(parts[1]));
             }
 
-            return sumOfCalibrationValues.ToString();
+            left.Sort();
+            right.Sort();
+
+            int totalDistance = 0;
+
+            for (int i = 0; i < left.Count; i++)
+            {
+                totalDistance += Math.Abs(left[i] - right[i]);
+            }
+
+            return totalDistance.ToString();
         }
 
         static public string Part2(string filename)
         {
             var lines = File.ReadAllLines(filename);
-            int sumOfCalibrationValues = 0;
+            List<int> left = new List<int>();
+            List<int> right = new List<int>();
 
             foreach (var line in lines)
             {
-                string newLine = line; 
-
-                newLine = newLine.Replace("one", "one1one");
-                newLine = newLine.Replace("two", "two2two");
-                newLine = newLine.Replace("three", "three3three");
-                newLine = newLine.Replace("four", "four4four");
-                newLine = newLine.Replace("five", "five5five");
-                newLine = newLine.Replace("six", "six6six");
-                newLine = newLine.Replace("seven", "seven7seven");
-                newLine = newLine.Replace("eight", "eight8eight");
-                newLine = newLine.Replace("nine", "nine9nine");
-
-                var first = newLine.First(c => Char.IsDigit(c));
-                var last = newLine.Last(c => Char.IsDigit(c));
-                var number = first.ToString() + last.ToString();
-                int calibrationValue = Convert.ToInt32(number);
-                sumOfCalibrationValues += calibrationValue;
+                var parts = line.Split("   ");
+                left.Add(Convert.ToInt32(parts[0]));
+                right.Add(Convert.ToInt32(parts[1]));
             }
 
-            return sumOfCalibrationValues.ToString();
+            int similarityScore = 0;
+
+            foreach (var n in left)
+            {
+                int same = right.Count(i => i == n);
+                similarityScore += same * n;
+            }
+
+            return similarityScore.ToString();
         }
     }
 }
