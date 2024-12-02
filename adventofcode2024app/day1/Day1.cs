@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace adventofcode2024app
 {
-    public class Day1
+    public class Day1 : IAocDay
     {
         static public string Part1(string filename)
         {
