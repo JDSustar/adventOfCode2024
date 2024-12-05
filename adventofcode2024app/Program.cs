@@ -18,6 +18,8 @@ namespace adventofcode2024app
             Console.WriteLine("Day 4, Part 1:\t" + Day4.Part1("day4/day4.txt"));
             Console.WriteLine("Day 4, Part 2:\t" + Day4.Part2("day4/day4.txt"));
 
+            Console.WriteLine("Day 5, Part 1:\t" + Day5.Part1("day5/day5.txt"));
+            Console.WriteLine("Day 5, Part 2:\t" + Day5.Part2("day5/day5.txt"));
         }
     }
 }
