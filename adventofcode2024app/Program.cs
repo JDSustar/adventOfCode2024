@@ -22,7 +22,10 @@ namespace adventofcode2024app
             Console.WriteLine("Day 5, Part 2:\t" + Day5.Part2("day5/day5.txt"));
 
             Console.WriteLine("Day 6, Part 1:\t" + Day6.Part1("day6/day6.txt"));
-            Console.WriteLine("Day 6, Part 2:\t" + Day6.Part2("day6/day6.txt"));
+            //Console.WriteLine("Day 6, Part 2:\t" + Day6.Part2("day6/day6.txt"));
+
+            Console.WriteLine("Day 7, Part 1:\t" + Day7.Part1("day7/input.txt"));
+            Console.WriteLine("Day 7, Part 2:\t" + Day7.Part2("day7/input.txt"));
         }
     }
 }
